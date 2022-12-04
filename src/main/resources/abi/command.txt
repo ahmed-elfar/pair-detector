@@ -1,0 +1,1 @@
+./web3j generate solidity -p java.contract -o /home/dev/Downloads/web3j-1.4.1 -a /home/dev/workspace/IdeaProjects/PiarDetector/src/main/resources/abi/polygon/fatory/quickswap.json
