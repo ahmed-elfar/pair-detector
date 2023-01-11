@@ -44,7 +44,6 @@ public abstract class ConcurrentEvent<T> implements EventListener<T> {
     @Override
     public void pollEvents() {
         try {
-            Thread.sleep(12);
             start = System.currentTimeMillis();
             while (!concurrentQueue.isEmpty()) {
                 process(concurrentQueue.poll());

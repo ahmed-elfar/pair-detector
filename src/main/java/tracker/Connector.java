@@ -297,10 +297,8 @@ public class Connector {
                         Arrays.asList(EventEncoder.encode(PairFactory.PAIRCREATED_EVENT)))
                 .subscribe(onNext -> {
                     LOG.info("onPair");
-                    AsyncTaskManager.asyncTaskManager.execute(() -> {
-                        var pairEvent = contract.readLog(onNext.getParams().getResult());
-                        pairResolver.onEvent(pairEvent);
-                    });
+                    var pairEvent = contract.readLog(onNext.getParams().getResult());
+                    pairResolver.onEvent(pairEvent);
                 }, onError -> {
                     onError.printStackTrace();
                     AppManager.unTrack(newDisposable[0]);
